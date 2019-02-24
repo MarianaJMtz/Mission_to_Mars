@@ -1,0 +1,45 @@
+body {
+  background-color: #ededed !important;
+}
+
+.container {
+  margin-top: 2rem;
+}
+
+.landing-row {
+  margin-bottom: 6rem;
+}
+
+.landing-card-title {
+  color: #0bada6;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem !important;
+}
+
+.active-visualization {
+  border: 3px solid #0bada6;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 2rem !important;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #666666;
+  color: white;
+  text-align: center;
+  border-top: 4px solid #0bada6;
+}
+
+.footer > p {
+  margin-top: 0.5rem;
+  margin-top: 0.5rem;
+}
