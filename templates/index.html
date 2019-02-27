@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Homework 12</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p>
+        <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data.</a>
+      </p>
+    </div>
+
+    <!-- Information -->
+    <div class="row" id="mars_news">
+      <div class="col-md-12">
+        <h3><strong>Latest Mars News</strong></h3>
+        <h4 class="heading">
+          <strong>{{ results.news_title }}</strong>
+        </h4>
+        <small>{{ results.news_p }}</small>
+      </div>
+    </div>
+    <!-- main -->
+    <div class="row" id="feature_image">
+      <div class="col-md-8">
+        <h3><strong>Featured Mars Image</strong></h3>
+        <h5 class="heading">
+          <img src={{ results.feature_image_url }} alt="Feature Image" width="100%" />
+        </h5>
+      </div>
+      <div class="col-md-4">
+        <div class="row" id="Mars_weather">
+          <h4><strong>Current Weather on Mars</strong></h4>
+          <small>{{ results.mars_weather }}</small>
+        </div>
+        <div class="row" id="Mars_facts">
+          <h4><strong>Mars Facts</strong></h4>
+          {{results.html_table | safe}}
+        </div>
+      </div>
+    </div>
+    <!-- Hemispheres images -->
+    <div class="row text-center" id="Mars_hemipsheres">
+      <h3><strong>Mars Hemispheres</strong></h3>
+      <hr size="50"> 
+    </div>
+    <!-- Loop through the dictionary -->
+    <div class="row" id="Hemisphere_image">
+      {% for image in results.hemisphere_image_urls %}
+        <div class="col-md-6">
+          <figure class="figure well well-sm">
+            <img src={{ image.image_url}} class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure." width= "100%">
+            <figcaption class="figure-caption text-left"><h4><strong>{{image.title}}</strong></h4></figcaption>
+            <span class="border border-muted"></span>
+          </figure>
+        </div> 
+      {% endfor %}
+    </div>
+      
+</body>
+
+</html>
