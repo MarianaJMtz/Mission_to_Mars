@@ -61,7 +61,9 @@ def scrape():
 
     for result in results:
         texto = result.find('p', class_='TweetTextSize TweetTextSize--normal js-tweet-text tweet-text').text
-        if texto[:3] == 'Sol':
+        x= texto.find("InSight sol")
+    
+        if x == 0:
             mars_weather = texto.rsplit('pic.twitter',1)[0]
             break
 
